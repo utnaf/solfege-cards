@@ -75,7 +75,7 @@ export default {
 
 .card__face-back {
   transform: rotateY(180deg);
-  font-size: 5em;
+  font-size: 2em;
   color: coral;
   font-weight: bold;
 }
