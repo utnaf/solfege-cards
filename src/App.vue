@@ -1,19 +1,27 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <ul id="app" class="grid">
+    <li v-for="note in notes" :key="note.id" class="grid__item">
+      <Card :note="note" />
+    </li>
+  </ul>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Card from "./components/Card.vue";
+import Note from "./entities/Note";
+import { shuffle } from "lodash";
 
 export default {
-  name: 'App',
+  name: "App",
+  data: () => {
+    return {
+      notes: shuffle([new Note("SI"), new Note("RE")]),
+    };
+  },
   components: {
-    HelloWorld
-  }
-}
+    Card,
+  },
+};
 </script>
 
 <style>
@@ -21,8 +29,19 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 0;
+}
+
+.grid {
+  margin: 0;
+  padding: 0;
+}
+
+.grid__item {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: inline-block;
 }
 </style>
