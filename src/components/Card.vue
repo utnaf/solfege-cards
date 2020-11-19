@@ -46,10 +46,10 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .scene {
-  width: 280px;
-  height: 400px;
-  perspective: 840px;
-  margin: 2rem;
+  width: 120px;
+  height: 180px;
+  perspective: 360px;
+  margin: 1rem;
   display: block;
 }
 

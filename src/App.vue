@@ -15,7 +15,24 @@ export default {
   name: "App",
   data: () => {
     return {
-      notes: shuffle([new Note("SI"), new Note("RE")]),
+      notes: shuffle([
+        new Note("SI", 0),
+        new Note("DO", 1),
+        new Note("RE", 1),
+        new Note("MI", 1),
+        new Note("FA", 1),
+        new Note("SOL", 1),
+        new Note("LA", 1),
+        new Note("SI", 1),
+        new Note("DO", 2),
+        new Note("RE", 2),
+        new Note("MI", 2),
+        new Note("FA", 2),
+        new Note("SOL", 2),
+        new Note("LA", 2),
+        new Note("SI", 2),
+        new Note("DO", 3),
+      ]),
     };
   },
   components: {

@@ -1,5 +1,5 @@
 class Note {
-  constructor(noteName, octave = 1) {
+  constructor(noteName, octave) {
     this.noteName = noteName.toUpperCase();
     this.octave = octave;
   }
