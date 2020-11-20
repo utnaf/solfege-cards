@@ -15,32 +15,32 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "Card",
+<script lang="ts">
+import { INote } from "@/entities/Note";
+import { Component, Vue } from "vue-property-decorator";
+
+const CardProps = Vue.extend({
   props: {
-    note: {
-      type: Object,
-      required: true,
-    },
+    note: Object as () => INote,
+    required: () => true,
   },
-  data: () => {
-    return {
-      isFlipped: false,
-      interval: null,
-    };
-  },
-  methods: {
-    flip: function() {
-      clearInterval(this.interval);
-      this.isFlipped = !this.isFlipped;
-      this.interval = setInterval(() => (this.isFlipped = false), 3000);
-    },
-    getImage: function(pic) {
-      return require("../assets/cards/" + pic);
-    },
-  },
-};
+});
+
+@Component
+export default class Card extends CardProps {
+  isFlipped: boolean = false;
+  interval: number = 0;
+
+  flip(): void {
+    clearInterval(this.interval);
+    this.isFlipped = !this.isFlipped;
+    this.interval = setInterval(() => (this.isFlipped = false), 3000);
+  }
+
+  getImage(pic: String): String {
+    return require("@/assets/cards/" + pic);
+  }
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

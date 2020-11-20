@@ -6,13 +6,16 @@
   </ul>
 </template>
 
-<script>
-import Card from "./components/Card.vue";
-import Note from "./entities/Note";
+<script lang="ts">
+import { Component, Vue } from "vue-property-decorator";
+import Card from "@/components/Card.vue";
+import Note from "@/entities/Note";
 import { shuffle } from "lodash";
 
-export default {
-  name: "App",
+@Component({
+  components: {
+    Card,
+  },
   data: () => {
     return {
       notes: shuffle([
@@ -35,10 +38,8 @@ export default {
       ]),
     };
   },
-  components: {
-    Card,
-  },
-};
+})
+export default class App extends Vue {}
 </script>
 
 <style>
