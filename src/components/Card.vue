@@ -6,7 +6,7 @@
       v-on:click="flip"
     >
       <div class="card__face card__face-front">
-        <img class="card__image" :src="getImage(note.image)" />
+        <div class="card__notation" :id="notationId"></div>
       </div>
       <div class="card__face card__face-back">
         {{ note.name }}
@@ -16,8 +16,10 @@
 </template>
 
 <script lang="ts">
+// eslint-disable-next-line no-unused-vars
 import { INote } from "@/entities/Note";
 import { Component, Vue } from "vue-property-decorator";
+import Vexflow from "@/helpers/Vexflow";
 
 const CardProps = Vue.extend({
   props: {
@@ -31,14 +33,18 @@ export default class Card extends CardProps {
   isFlipped: boolean = false;
   interval: number = 0;
 
+  mounted() {
+    Vexflow(this.notationId, this.note);
+  }
+
+  get notationId(): string {
+    return "notation-" + this.note.id;
+  }
+
   flip(): void {
     clearInterval(this.interval);
     this.isFlipped = !this.isFlipped;
     this.interval = setInterval(() => (this.isFlipped = false), 3000);
-  }
-
-  getImage(pic: String): String {
-    return require("@/assets/cards/" + pic);
   }
 }
 </script>
@@ -84,7 +90,8 @@ export default class Card extends CardProps {
   transform: rotateY(180deg);
 }
 
-.card__image {
-  height: 60%;
+.card__notation {
+  height: 100%;
+  width: 100%;
 }
 </style>

@@ -11,6 +11,7 @@ import { Component, Vue } from "vue-property-decorator";
 import Card from "@/components/Card.vue";
 import Note from "@/entities/Note";
 import { shuffle } from "lodash";
+import BaseNotes from "@/entities/base";
 
 @Component({
   components: {
@@ -19,22 +20,22 @@ import { shuffle } from "lodash";
   data: () => {
     return {
       notes: shuffle([
-        new Note("SI", 0),
-        new Note("DO", 1),
-        new Note("RE", 1),
-        new Note("MI", 1),
-        new Note("FA", 1),
-        new Note("SOL", 1),
-        new Note("LA", 1),
-        new Note("SI", 1),
-        new Note("DO", 2),
-        new Note("RE", 2),
-        new Note("MI", 2),
-        new Note("FA", 2),
-        new Note("SOL", 2),
-        new Note("LA", 2),
-        new Note("SI", 2),
-        new Note("DO", 3),
+        new Note(BaseNotes.Si, 3),
+        new Note(BaseNotes.Do, 4),
+        new Note(BaseNotes.Re, 4),
+        new Note(BaseNotes.Mi, 4),
+        new Note(BaseNotes.Fa, 4),
+        new Note(BaseNotes.Sol, 4),
+        new Note(BaseNotes.La, 4),
+        new Note(BaseNotes.Si, 4),
+        new Note(BaseNotes.Do, 5),
+        new Note(BaseNotes.Re, 5),
+        new Note(BaseNotes.Mi, 5),
+        new Note(BaseNotes.Fa, 5),
+        new Note(BaseNotes.Sol, 5),
+        new Note(BaseNotes.La, 5),
+        new Note(BaseNotes.Si, 5),
+        new Note(BaseNotes.Do, 6),
       ]),
     };
   },

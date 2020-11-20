@@ -1,28 +1,30 @@
+import { IBase } from "@/entities/base/Base";
+
 export interface INote {
-  image: String;
-  name: String;
-  id: String;
+  name: string;
+  id: string;
+  notation: string;
 }
 
 class Note implements INote {
-  private noteName: String;
+  private baseNote: IBase;
   private octave: Number;
 
-  constructor(noteName: String, octave: Number) {
-    this.noteName = noteName.toUpperCase();
+  constructor(baseNote: IBase, octave: Number) {
+    this.baseNote = baseNote;
     this.octave = octave;
   }
 
-  get image(): String {
-    return `${this.octave}_${this.noteName}.png`;
+  get name(): string {
+    return this.baseNote.solfege;
   }
 
-  get name(): String {
-    return this.noteName;
+  get notation(): string {
+    return `${this.baseNote.latin}/${this.octave}`;
   }
 
-  get id(): String {
-    return this.noteName + this.octave.toString();
+  get id(): string {
+    return this.baseNote.solfege + this.octave;
   }
 }
 

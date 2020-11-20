@@ -16,6 +16,7 @@
     "vue-property-decorator": "^8.4.2"
   },
   "devDependencies": {
+    "@types/vexflow": "^3.0.0",
     "@types/lodash": "^4.14.165",
     "@typescript-eslint/eslint-plugin": "^2.33.0",
     "@typescript-eslint/parser": "^2.33.0",
