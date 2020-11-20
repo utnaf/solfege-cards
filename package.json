@@ -13,11 +13,12 @@
     "vexflow": "^3.0.9",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
+    "vue-piano-keyboard": "^1.0.10",
     "vue-property-decorator": "^8.4.2"
   },
   "devDependencies": {
-    "@types/vexflow": "^3.0.0",
     "@types/lodash": "^4.14.165",
+    "@types/vexflow": "^3.0.0",
     "@typescript-eslint/eslint-plugin": "^2.33.0",
     "@typescript-eslint/parser": "^2.33.0",
     "@vue/cli-plugin-babel": "~4.5.0",

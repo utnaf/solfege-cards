@@ -1,9 +1,11 @@
 <template>
-  <ul id="app" class="grid">
-    <li v-for="note in notes" :key="note.id" class="grid__item">
-      <Card :note="note" />
-    </li>
-  </ul>
+  <div id="app">
+    <ul id="app" class="grid">
+      <li v-for="note in notes" :key="note.id" class="grid__item">
+        <Card :note="note" />
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script lang="ts">
@@ -12,6 +14,7 @@ import Card from "@/components/Card.vue";
 import Note from "@/entities/Note";
 import { shuffle } from "lodash";
 import BaseNotes from "@/entities/base";
+// import PianoKeyboard from "vue-piano-keyboard";
 
 @Component({
   components: {
@@ -58,9 +61,27 @@ export default class App extends Vue {}
 }
 
 .grid__item {
-  margin: 0;
   padding: 0;
   list-style: none;
   display: inline-block;
+  width: 12.5%;
+}
+
+@media (max-width: 1024px) {
+  .grid__item {
+    width: 20%;
+  }
+}
+
+@media (max-width: 680px) {
+  .grid__item {
+    width: 33.3%;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid__item {
+    width: 50%;
+  }
 }
 </style>

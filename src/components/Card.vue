@@ -55,7 +55,7 @@ export default class Card extends CardProps {
   width: 120px;
   height: 180px;
   perspective: 360px;
-  margin: 1rem;
+  margin: 1rem auto;
   display: block;
 }
 
