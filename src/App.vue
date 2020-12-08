@@ -6,6 +6,13 @@
         <Card :note="note" />
       </li>
     </ul>
+    <div id="footer">
+      Made with ❤ by
+      <a href="https://twitter.com/utnaf" target="_blank">utnaf</a>. It's
+      <a href="https://github.com/utnaf/solfege-cards" target="_blank"
+        >Open Sourced</a
+      >
+    </div>
   </div>
 </template>
 
@@ -65,6 +72,17 @@ export default class App extends Vue {}
   list-style: none;
   display: inline-block;
   width: 12.5%;
+}
+
+#footer {
+  background: rgba(255, 255, 255, 0.9);
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  font-size: 0.7rem;
+  padding: 0.7rem 0 0.3rem;
 }
 
 @media (max-width: 1024px) {

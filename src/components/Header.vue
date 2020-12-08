@@ -26,9 +26,7 @@
           Bass
         </label>
       </li>
-      <li class="header-item">
-        <div class="header-item__separator"></div>
-      </li>
+      <li class="header-item header-item__separator"></li>
       <li class="header-item">
         <strong>Notation</strong>
       </li>
@@ -130,5 +128,35 @@ export default class Header extends Vue {
 
 .header-item__separator {
   width: 6px;
+}
+
+@media (max-width: 1024px) {
+  .header-items__right {
+    display: none;
+  }
+}
+
+@media (max-width: 680px) {
+  .header {
+    height: auto;
+    overflow: auto;
+  }
+
+  .header-item__separator {
+    display: none;
+  }
+
+  .header-item {
+    width: 20%;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-item {
+    line-height: 40px;
+  }
+  .header-item {
+    font-size: 0.8rem;
+  }
 }
 </style>
