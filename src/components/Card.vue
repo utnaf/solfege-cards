@@ -9,7 +9,7 @@
         <div class="card__notation" :id="notationId"></div>
       </div>
       <div class="card__face card__face-back">
-        {{ note.name }}
+        {{ note.name(notation) }}
       </div>
     </div>
   </div>
@@ -20,6 +20,7 @@
 import { INote } from "@/entities/Note";
 import { Component, Vue } from "vue-property-decorator";
 import Vexflow from "@/helpers/Vexflow";
+import { State } from "vuex-class";
 
 const CardProps = Vue.extend({
   props: {
@@ -32,6 +33,8 @@ const CardProps = Vue.extend({
 export default class Card extends CardProps {
   isFlipped: boolean = false;
   interval: number = 0;
+
+  @State((state) => state.filter_notation) notation: string | undefined;
 
   mounted() {
     Vexflow(this.notationId, this.note);

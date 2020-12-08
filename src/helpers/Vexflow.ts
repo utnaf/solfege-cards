@@ -12,7 +12,6 @@ export default (id: string, note: INote) => {
 
   const renderer = new VF.Renderer(div, VF.Renderer.Backends.SVG);
 
-  console.log("Rendering", note.notation);
   renderer.resize(110, 180);
   const context = renderer.getContext();
   context.setFont("Arial", 10).setBackgroundFillStyle("#eed");

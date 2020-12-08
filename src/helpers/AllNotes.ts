@@ -26,13 +26,6 @@ export default [
   new Note(BaseNotes.Do, 6, trebleClef),
 
   // Treble Clef
-  new Note(BaseNotes.Si, 0, bassClef),
-  new Note(BaseNotes.Do, 1, bassClef),
-  new Note(BaseNotes.Re, 1, bassClef),
-  new Note(BaseNotes.Mi, 1, bassClef),
-  new Note(BaseNotes.Fa, 1, bassClef),
-  new Note(BaseNotes.Sol, 1, bassClef),
-  new Note(BaseNotes.La, 1, bassClef),
   new Note(BaseNotes.Si, 1, bassClef),
   new Note(BaseNotes.Do, 2, bassClef),
   new Note(BaseNotes.Re, 2, bassClef),
@@ -42,4 +35,9 @@ export default [
   new Note(BaseNotes.La, 2, bassClef),
   new Note(BaseNotes.Si, 2, bassClef),
   new Note(BaseNotes.Do, 3, bassClef),
+  new Note(BaseNotes.Re, 3, bassClef),
+  new Note(BaseNotes.Mi, 3, bassClef),
+  new Note(BaseNotes.Fa, 3, bassClef),
+  new Note(BaseNotes.Sol, 3, bassClef),
+  new Note(BaseNotes.La, 3, bassClef),
 ]

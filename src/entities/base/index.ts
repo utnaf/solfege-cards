@@ -1,5 +1,8 @@
 import Base from "./Base";
 
+export const NOTATION_SOLFEGE = "solfege"
+export const NOTATION_LATIN = "latin"
+
 export default {
   Do: new Base("DO", "C"),
   Re: new Base("RE", "D"),

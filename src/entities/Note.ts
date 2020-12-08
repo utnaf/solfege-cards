@@ -1,8 +1,9 @@
 import { IBase } from "@/entities/base/Base";
 import { IClef } from "@/entities/Clef";
+import { NOTATION_SOLFEGE } from "@/entities/base";
 
 export interface INote {
-  name: string;
+  name(notation: string): string;
   id: string;
   notation: string;
   clef: string
@@ -19,8 +20,8 @@ class Note implements INote {
     this._clef = clef;
   }
 
-  get name(): string {
-    return this.baseNote.solfege;
+  name(notation: string): string {
+    return notation === NOTATION_SOLFEGE ? this.baseNote.solfege : this.baseNote.latin;
   }
 
   get notation(): string {

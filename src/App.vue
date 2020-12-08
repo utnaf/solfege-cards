@@ -22,10 +22,14 @@ import allNotes from "@/helpers/AllNotes";
     Card,
     Header,
   },
-  data: () => {
-    return {
-      notes: shuffle(allNotes),
-    };
+  computed: {
+    notes: function () {
+      return shuffle(
+        allNotes.filter(
+          (note) => this.$store.state.filter_clefs.indexOf(note.clef) > -1
+        )
+      );
+    },
   },
 })
 export default class App extends Vue {}
