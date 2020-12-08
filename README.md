@@ -1,4 +1,9 @@
-# solfege-cards
+# Solfege Cards
+
+I use this to learn solfege. Hope you'll find it useful.
+
+Please feel free to contribute! Open an issue if you find a bug or have any idea!
+
 
 ## Project setup
 ```
